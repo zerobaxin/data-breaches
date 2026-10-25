@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年10月の世界の情報漏洩リスト</title>
+<style>
+  body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 24px auto; max-width: 1100px; padding: 0 16px; color: #1a1a1a; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .sub { color: #555; font-size: 13px; margin-bottom: 16px; }
+  #search { width: 100%; box-sizing: border-box; padding: 10px 12px; font-size: 16px; border: 1px solid #bbb; border-radius: 8px; margin-bottom: 6px; }
+  #count { font-size: 13px; color: #555; margin: 6px 0 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left; }
+  th { background: #f4f6f8; white-space: nowrap; }
+  td.company { font-weight: 600; white-space: nowrap; }
+  .note { font-size: 13px; color: #444; background: #fafafa; border: 1px solid #e3e3e3; border-radius: 8px; padding: 10px 14px; margin-top: 20px; }
+  a { color: #0b5cad; }
+  @media (max-width: 700px) { td.company { white-space: normal; } table { font-size: 12.5px; } }
+</style>
+</head>
+<body>
+<h1>2026年10月の世界の情報漏洩リスト</h1>
+<p class="sub">2026年10月1日〜25日に公表・報道された、世界各地の企業・組織の情報漏洩事例（29件）。漏洩した情報は各社の公表・報道内容に基づきます。「未確認」とあるものは攻撃者側の主張や流出の可能性段階のものです。</p>
+
+<input id="search" type="search" placeholder="会社名で検索（例：カプコン、Oracle、JR）">
+<div id="count"></div>
+
+<table>
+  <thead>
+    <tr><th>会社・組織</th><th>国</th><th>公表日</th><th>漏洩した情報（公表内容）</th><th>手口</th><th>出典</th></tr>
+  </thead>
+  <tbody id="rows"></tbody>
+</table>
+
+<div class="note">
+<strong>対象外にした事例</strong>（10月に攻撃はあったが、情報漏洩は確認されていないもの）<br>
+- IDCフロンティア／IDCFクラウド（日本）：10月7日のランサムウェアで495の企業・自治体クライアントに障害。10月14日時点で顧客データが流出した証拠はないと発表。<br>
+- Ahold Delhaize（オランダ／米国）：10月11〜19日のサイバー攻撃でシステム停止。機微な顧客・従業員データが盗まれた証拠はないと発表。
+</div>
+
+<p class="sub" style="margin-top:16px">作成：2026-10-25。各事例の詳細は出典リンクを確認してください。</p>
+
+<script>
+const DATA = [
+{n:"佐川急便",e:"Sagawa Express",c:"日本",d:"2026-10-23",w:"最大約5,323万件（重複含む）。送り状の送り主・届け先の氏名、住所、電話番号（6/21〜9/30発送分）、貨物契約の顧客リスト、スマートクラブ会員情報（氏名、住所、電話、メール、会員ID）。カード情報やパスワードは含まれず",t:"荷物お問い合わせサービスへの不正アクセス",s:"Impress Watch",u:"https://www.watch.impress.co.jp/docs/news/2150818.html"},
+{n:"Oracle Health / Cerner",e:"Oracle Health",c:"米国",d:"2026-10-02",w:"約1,990万人の個人情報・医療情報（テキサス州分は2,992,244人）。侵入自体は2025年初頭に発生し、規模が2026年10月に表面化",t:"盗まれた認証情報による旧Cernerシステムへのアクセス",s:"Fox News",u:"https://foxnews.com/tech/oracle-health-data-breach-exposes-nearly-20-million-patients"},
+{n:"バーガーキング・ジャパン",e:"Burger King Japan",c:"日本",d:"2026-10-15",w:"公式アプリ会員1,118万件：氏名、生年月日、性別、メールアドレス、電話番号、注文履歴。クレジットカード番号は保存されておらず、認証情報へのアクセスの証拠もなし",t:"サーバへの不正アクセス",s:"BleepingComputer",u:"https://www.bleepingcomputer.com/news/security/burger-king-japan-data-breach-exposes-11-million-customer-records/"},
+{n:"カプコン",e:"Capcom",c:"日本",d:"2026-10-22",w:"CAPCOM ID 11,774,247件：メールアドレスとアカウント情報（作成日、最終ログイン日、ログイン回数、最終ログインIP）。43件は生年月日、性別、国・地域、ニックネームも含む。元のパスワードやカード情報は無事",t:"アカウントサービスへの不正アクセス",s:"SecurityWeek / Cybernoz",u:"https://cybernoz.com/11-million-impacted-by-capcom-data-breach/"},
+{n:"第一興商",e:"Daiichi Kosho",c:"日本",d:"2026-10-08",w:"約872万件の顧客・従業員情報に流出リスク（氏名、性別、生年月日、メールアドレス、電話番号）。情報の窃取自体は未確認",t:"委託先（日本コロムビアグループ）のPCのマルウェア感染",s:"BeInSure",u:"https://beinsure.com/news/daiichi-kosho-data-breach-puts-8-7mn-records/"},
+{n:"デンマーク中央個人登録（CPR）",e:"Denmark CPR / Pays ApS",c:"デンマーク",d:"2026-10-05",w:"約880万人の氏名、住所、CPR番号（国民ID番号）。ベンダーPays ApS経由",t:"提携ベンダーの正規アクセスの悪用（自動大量照会）",s:"The Register",u:"https://www.theregister.com/security/2026/10/13/123456-password-linked-to-denmark-data-breach-affecting-88m-people/5302726"},
+{n:"iRhythm Technologies",e:"iRhythm",c:"米国",d:"2026-10-09",w:"8,179,772人：患者の氏名、住所、電話、メール、患者アカウント番号、デバイスシリアル番号、保険番号、生年月日、受診日",t:"第三者ホスト型業務アプリへのソーシャルエンジニアリング",s:"Axis Intelligence（州司法長官提出資料）",u:"https://axis-intelligence.com/data-breach-tracker/"},
+{n:"ATB（スーパーマーケット）",e:"ATB",c:"ウクライナ",d:"2026-10-05〜11週",w:"攻撃者グループが顧客790万件（氏名、住所、パスポート情報、注文記録）を窃取したと主張 ※未確認",t:"サイバー攻撃／恐喝",s:"Check Point Research",u:"https://research.checkpoint.com/wp-content/uploads/2026/10/Threat_Intelligence_News_2026-10-12.pdf"},
+{n:"Educational Testing Service (ETS)",e:"ETS",c:"米国",d:"2026-10-20",w:"カリフォルニア州の公立学校生徒約570万人分（2006年以降の記録）：氏名、住所、生年月日、障害記録、学年、学校、生徒ID、性別、人種、第一言語、出身国",t:"盗まれた認証情報でファイル転送サイトからファイルをコピー",s:"Los Angeles Times / Privacy Guides",u:"https://www.privacyguides.org/news/2026/10/23/data-breach-roundup-oct-16-22-2026/"},
+{n:"JR東日本",e:"JR East",c:"日本",d:"2026-10-09",w:"最大約206万件（メールアドレスを含む）が流出した可能性",t:"外部メール配信サービスのデータに関する事案",s:"大原調査室（サプライチェーン事例まとめ）",u:"https://www.tantei.co.jp/security/supply-chain"},
+{n:"CenterPoint Energy",e:"CenterPoint Energy",c:"米国",d:"2026-10-13",w:"テキサス州住民1,062,060人（全体では1,611,625人）：氏名、住所、社会保障番号、運転免許番号",t:"外部向けシステムへの不正アクセス",s:"SecurityWeek / BreachHistory",u:"https://breachhistory.com/blog/centerpoint-energy-utility-data-breach-october-2026"},
+{n:"日本経済新聞社",e:"Nikkei",c:"日本",d:"2026-10-16",w:"約183万件。うち約15万件に氏名、メールアドレス、住所、電話番号、生年月日のいずれかを含む。クレジットカード情報は含まれず",t:"盗まれた認証情報による開発用クラウドサービスへのアクセス",s:"SecurityWeek / Cybernoz",u:"https://cybernoz.com/nikkei-data-breach-affected-over-1-8-million-records/"},
+{n:"JR九州",e:"JR Kyushu",c:"日本",d:"2026-10-09",w:"最大約130万件のメールアドレスが流出した可能性（氏名、住所は含まれていないとされる）",t:"外部メール配信サービスのデータに関する事案",s:"大原調査室（サプライチェーン事例まとめ）",u:"https://www.tantei.co.jp/security/supply-chain"},
+{n:"阪急阪神百貨店（H2Oリテイリング）",e:"Hankyu Hanshin Department Stores",c:"日本",d:"2026-10-19",w:"H2O ID会員約126万件の一部：氏名、性別、メールアドレス、住所、電話番号、生年月日、ログインID。完全なカード番号やログインパスワードは保有・流出なし。注文履歴や一部カード情報は調査中",t:"予約サイト経由で顧客管理システムへ不正アクセス",s:"Security Measures Lab",u:"https://rocket-boys.co.jp/security-measures-lab/h2o-hankyu-hanshin-department-store-1260000/"},
+{n:"モスフードサービス／バリューデザイン",e:"MOS Food Services / Value Design",c:"日本",d:"2026-10-23",w:"プリペイド「モスカード」1,133,070件：16桁のカード番号、6桁のPIN、残高情報。氏名、住所、電話、クレジットカード情報は含まれず。PINは強制リセット済み",t:"ベンダー（バリューデザイン）のWebサーバ脆弱性を悪用した不正アクセス",s:"Security Measures Lab",u:"https://rocket-boys.co.jp/security-measures-lab/mos-card-unauthorized-access-20261023/"},
+{n:"Paradigm Healthcare Services",e:"Paradigm Healthcare",c:"米国",d:"2026-10-20",w:"Medi-Cal（カリフォルニア州メディケイド）会員970,403人：氏名、生年月日、性別、会員ID番号。侵入は2025年10月、公的報告が2026年10月",t:"ローカルネットワークへの不正アクセス",s:"SecurityWeek",u:"https://www.securityweek.com/970000-medi-cal-members-affected-by-paradigm-healthcare-data-breach/"},
+{n:"ファンケル／アテニア",e:"FANCL / Attenir",c:"日本",d:"2026-10-16",w:"会員834,947件（約78.5万人）：氏名、住所、電話番号、生年月日、性別、メール、顧客番号、ポイント・会員情報、一部はハッシュ化された第2パスワード。本パスワードや決済情報は含まれず",t:"両社のECサイトへの不正アクセス",s:"Security Measures Lab",u:"https://rocket-boys.co.jp/security-measures-lab/fancl-attenir-ec-data-breach-20261016/"},
+{n:"Zeabur",e:"Zeabur",c:"台湾",d:"2026-10-19",w:"321,810アカウントと環境変数3,218,965件（名前と値。パスワードやAPIキーを含む）が本番DBから読み取られた。顧客のGCPサーバ101台へのrootアクセスも。社は2026年末までの事業終了を発表",t:"内部管理者認証情報の漏洩（平文保存、過去の侵害後も未ローテーション）",s:"BleepingComputer",u:"https://www.bleepingcomputer.com/news/security/zeabur-shutting-down-after-second-security-breach-in-two-months/"},
+{n:"Fivot（IDARE）",e:"Fivot / IDARE",c:"日本",d:"2026-10-13",w:"利用者129,659人：電話番号、メールアドレス、生年月日、ユーザーID、残高、取引履歴、IDAREカード名義・有効期限。一部は氏名、住所、本人確認書類番号、カード番号の一部、銀行口座番号の一部も。パスワードと完全なカード番号は流出せず",t:"第三者のカスタマーサポートソフトの脆弱性を悪用",s:"TRAICY",u:"https://www.traicy.com/posts/20261013384867/"},
+{n:"大阪公立大学",e:"Osaka Metropolitan University",c:"日本",d:"2026-10-05〜11週",w:"少なくとも13万人の個人情報が流出した可能性。約500台のサーバが影響を受け、授業・ネットワーク・メールに障害",t:"ランサムウェアの疑い",s:"Check Point Research",u:"https://research.checkpoint.com/wp-content/uploads/2026/10/Threat_Intelligence_News_2026-10-12.pdf"},
+{n:"韓国金融機関16社（新韓銀行、KB国民銀行、ハナ銀行、釜山銀行、イェガラム貯蓄銀行、ウェルカム貯蓄銀行、現代キャピタルほか）",e:"South Korean financial institutions",c:"韓国",d:"2026-10-01〜14",w:"16社合計で約10万件の個人情報（氏名、連絡先、住民登録番号、メール）を確認。最大はイェガラム貯蓄銀行の約4万人、新韓銀行は25,729人（所得や融資限度額情報を含む）。口座番号やカード番号は含まれず",t:"職員・提携先システムへの協調的な攻撃キャンペーン",s:"Aju Press",u:"https://www.ajupress.com/view/20261014155603996"},
+{n:"Railway",e:"Railway",c:"米国",d:"2026-10-21",w:"顧客の環境変数（パスワード、APIキー、データベースやクラウドの認証情報）。一部は復号された内容を取得された可能性。最大で約10万ワークスペースに影響の可能性。全ユーザーにキー無効化を呼びかけ",t:"顧客シークレット保管システムへのサイバー攻撃",s:"TechCrunch",u:"https://techcrunch.com/2026/10/22/developer-platform-railway-urges-all-users-to-revoke-secret-keys-after-cyberattack/"},
+{n:"インドステイト銀行 (SBI)",e:"State Bank of India",c:"インド",d:"2026-10-21",w:"ダークウェブで流通していた約37.5万件のデータのうち、3,897件の顧客情報を確認：氏名、登録携帯番号、生年月日、性別、メール、住所、支店・顧客IDなど。データの出所は調査中",t:"ダークウェブでの情報露出（経路不明）",s:"Reuters / The Hindu BusinessLine",u:"https://www.thehindubusinessline.com/money-and-banking/data-leak-incident-sbi-says-customer-balances-completely-safe/article71615271.ece"},
+{n:"Quest Diagnostics",e:"Quest Diagnostics",c:"米国",d:"2026-10-23",w:"Quanum LSMプラットフォーム経由で患者記録が露出。公表時点ではデータの種別と対象人数は未確定",t:"Quanum LSMシステムへの不正アクセス",s:"BleepingComputer",u:"https://www.bleepingcomputer.com/news/security/quest-diagnostics-confirms-data-breach-exposed-patient-records/"},
+{n:"Frontline Education",e:"Frontline Education",c:"米国",d:"2026-10-01",w:"K-12学区職員の氏名、社会保障番号、メールアドレス、住所。対象総数は未公表（ある学区では1,210人）",t:"連携する第三者ソフトウェア製品の脆弱性",s:"BleepingComputer / McAfee Blog",u:"https://www.mcafee.com/blogs/security-news/frontline-education-data-breach/"},
+{n:"ASOS",e:"ASOS",c:"英国",d:"2026-10-07",w:"顧客の氏名と連絡先を確認。BBCの調査では攻撃者が共有したサンプルに氏名、住所、電話、メール、検索データ、顧客番号。支払カード情報やパスワードはなし。被害人数は未公表",t:"ソーシャルエンジニアリングによる従業員認証情報の窃取",s:"BleepingComputer",u:"https://www.bleepingcomputer.com/news/security/asos-links-data-breach-to-social-engineering-attack-credential-theft/"},
+{n:"サンパウロ市「Smart Sampa」監視プログラム",e:"City of São Paulo / Smart Sampa",c:"ブラジル",d:"2026-10-20",w:"公開リポジトリに181件のログイン・パスワードと6,000人超の職員の記録が約11か月露出。市内58,000台超の監視カメラ映像へのアクセスに使えた可能性。市はパスワード含有を争っている",t:"内部関係者による漏洩／公開リポジトリ",s:"Particle News（UOL報道）",u:"https://particle.news/story/so-paulo-confirms-smart-sampa-data-leak-blames-gcm-officer"},
+{n:"GALLERY・2（ゼビオホールディングス傘下）",e:"GALLERY 2 / Xebio",c:"日本",d:"2026-10-23",w:"購入者の氏名・メール最大約12.8万件、住所・電話最大約12.2万件、メール送信履歴最大約15.8万件が閲覧された可能性 ※外部への流出は未確認。カード番号やログインパスワードは含まれず",t:"ECプラットフォーム運営者の管理者認証情報の窃取、決済入力ページの改ざん",s:"Security Measures Lab",u:"https://rocket-boys.co.jp/security-measures-lab/xebio_gallery2_commerble_unauthorized_ac128k_payment_page_tampering_20261023/"},
+{n:"戸田建設",e:"Toda Corporation",c:"日本",d:"2026-10-07",w:"取引先メールアドレス最大7,200件、取引記録最大6,000件、従業員4,778人分（氏名、住所、電話番号、メールアドレス、部署）",t:"支払管理システムに関する不正アクセス",s:"ASCII.jp / Ad-hoc News",u:"https://www.ad-hoc-news.de/boerse/nebenwerte/toda-corporation-disclosed-a-data-breach-what-it-means-for-toda-stock/70407264"}
+];
+
+const rows = document.getElementById('rows');
+const count = document.getElementById('count');
+const search = document.getElementById('search');
+
+function render(list) {
+  rows.innerHTML = list.map(x =>
+    '<tr><td class="company">' + x.n + '<br><span style="font-weight:400;color:#666;font-size:12px">' + x.e + '</span></td>' +
+    '<td>' + x.c + '</td><td style="white-space:nowrap">' + x.d + '</td><td>' + x.w + '</td><td>' + x.t + '</td>' +
+    '<td><a href="' + x.u + '" target="_blank" rel="noopener">' + x.s + '</a></td></tr>'
+  ).join('');
+  count.textContent = list.length + ' 件表示中（全' + DATA.length + '件）';
+}
+
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLowerCase();
+  if (!q) { render(DATA); return; }
+  render(DATA.filter(x => (x.n + ' ' + x.e + ' ' + x.c).toLowerCase().includes(q)));
+});
+
+render(DATA);
+</script>
+</body>
+</html>
