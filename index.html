@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026年10月の世界の情報漏洩リスト</title>
+<title>世界の情報漏洩リスト（2026年9月・10月）</title>
 <style>
   body { font-family: -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 24px auto; max-width: 1100px; padding: 0 16px; color: #1a1a1a; }
   h1 { font-size: 22px; margin-bottom: 4px; }
@@ -20,8 +20,8 @@
 </style>
 </head>
 <body>
-<h1>2026年10月の世界の情報漏洩リスト</h1>
-<p class="sub">2026年10月1日〜25日に公表・報道された、世界各地の企業・組織の情報漏洩事例（29件）。漏洩した情報は各社の公表・報道内容に基づきます。「未確認」とあるものは攻撃者側の主張や流出の可能性段階のものです。</p>
+<h1>世界の情報漏洩リスト（2026年9月・10月）</h1>
+<p class="sub">2026年9月1日〜10月25日に公表・報道された、世界各地の企業・組織の情報漏洩事例（全60件：9月31件、10月29件）。漏洩した情報は各社の公表・報道内容に基づきます。「未確認」とあるものは攻撃者側の主張や流出の可能性段階のものです。</p>
 
 <input id="search" type="search" placeholder="会社名で検索（例：カプコン、Oracle、JR）">
 <div id="count"></div>
@@ -34,12 +34,14 @@
 </table>
 
 <div class="note">
-<strong>対象外にした事例</strong>（10月に攻撃はあったが、情報漏洩は確認されていないもの）<br>
+<strong>対象外にした事例</strong>（攻撃・公表はあったが、情報漏洩は確認されていないもの）<br>
 - IDCフロンティア／IDCFクラウド（日本）：10月7日のランサムウェアで495の企業・自治体クライアントに障害。10月14日時点で顧客データが流出した証拠はないと発表。<br>
-- Ahold Delhaize（オランダ／米国）：10月11〜19日のサイバー攻撃でシステム停止。機微な顧客・従業員データが盗まれた証拠はないと発表。
+- Ahold Delhaize（オランダ／米国）：10月11〜19日のサイバー攻撃でシステム停止。機微な顧客・従業員データが盗まれた証拠はないと発表。<br>
+- 京王電鉄・京王プラザホテル（日本）：9月26日にランサムウェア攻撃を公表。10月16日の続報でも情報漏えいは未確認。<br>
+- ベトナム関連APIS旅客データベース：旅行記録約2.2億件が外部から閲覧可能な状態だったが、運営者不明で、データがコピーされた証拠もないため対象外（露出のみ）。
 </div>
 
-<p class="sub" style="margin-top:16px">作成：2026-10-25。各事例の詳細は出典リンクを確認してください。</p>
+<p class="sub" style="margin-top:16px">作成：2026-10-25（初版は10月分29件、同日に9月分31件を追加）。各事例の詳細は出典リンクを確認してください。</p>
 
 <script>
 const DATA = [
@@ -71,7 +73,38 @@ const DATA = [
 {n:"ASOS",e:"ASOS",c:"英国",d:"2026-10-07",w:"顧客の氏名と連絡先を確認。BBCの調査では攻撃者が共有したサンプルに氏名、住所、電話、メール、検索データ、顧客番号。支払カード情報やパスワードはなし。被害人数は未公表",t:"ソーシャルエンジニアリングによる従業員認証情報の窃取",s:"BleepingComputer",u:"https://www.bleepingcomputer.com/news/security/asos-links-data-breach-to-social-engineering-attack-credential-theft/"},
 {n:"サンパウロ市「Smart Sampa」監視プログラム",e:"City of São Paulo / Smart Sampa",c:"ブラジル",d:"2026-10-20",w:"公開リポジトリに181件のログイン・パスワードと6,000人超の職員の記録が約11か月露出。市内58,000台超の監視カメラ映像へのアクセスに使えた可能性。市はパスワード含有を争っている",t:"内部関係者による漏洩／公開リポジトリ",s:"Particle News（UOL報道）",u:"https://particle.news/story/so-paulo-confirms-smart-sampa-data-leak-blames-gcm-officer"},
 {n:"GALLERY・2（ゼビオホールディングス傘下）",e:"GALLERY 2 / Xebio",c:"日本",d:"2026-10-23",w:"購入者の氏名・メール最大約12.8万件、住所・電話最大約12.2万件、メール送信履歴最大約15.8万件が閲覧された可能性 ※外部への流出は未確認。カード番号やログインパスワードは含まれず",t:"ECプラットフォーム運営者の管理者認証情報の窃取、決済入力ページの改ざん",s:"Security Measures Lab",u:"https://rocket-boys.co.jp/security-measures-lab/xebio_gallery2_commerble_unauthorized_ac128k_payment_page_tampering_20261023/"},
-{n:"戸田建設",e:"Toda Corporation",c:"日本",d:"2026-10-07",w:"取引先メールアドレス最大7,200件、取引記録最大6,000件、従業員4,778人分（氏名、住所、電話番号、メールアドレス、部署）",t:"支払管理システムに関する不正アクセス",s:"ASCII.jp / Ad-hoc News",u:"https://www.ad-hoc-news.de/boerse/nebenwerte/toda-corporation-disclosed-a-data-breach-what-it-means-for-toda-stock/70407264"}
+{n:"戸田建設",e:"Toda Corporation",c:"日本",d:"2026-10-07",w:"取引先メールアドレス最大7,200件、取引記録最大6,000件、従業員4,778人分（氏名、住所、電話番号、メールアドレス、部署）",t:"支払管理システムに関する不正アクセス",s:"ASCII.jp / Ad-hoc News",u:"https://www.ad-hoc-news.de/boerse/nebenwerte/toda-corporation-disclosed-a-data-breach-what-it-means-for-toda-stock/70407264"},
+{"n": "TVING（ティビング）", "e": "TVING", "c": "韓国", "d": "2026-09-03", "w": "約3,954万アカウント（重複含む。アクティブ約2,206万、休眠約850万、退会約887万、テスト約11万）：氏名、生年月日、電話番号、メールアドレス、決済履歴、本人確認用識別子など。当初公表は6月で、9月3日に官民合同調査の結果として規模が判明した", "t": "窃取された開発者アクセスキーによる内部システムへの侵入", "s": "Korea JoongAng Daily", "u": "https://www.koreajoongangdaily.com/business/tving-opens-compensation-claims-after-data-leak-affecting-395-million-accounts/12862167"},
+{"n": "IDScan.net", "e": "IDScan.net", "c": "米国", "d": "2026-09-04", "w": "同社はクラウド環境（VeriScan）への不正アクセスと、氏名・運転免許番号等の政府発行ID番号を含む顧客データの流出を確認。販売サイト「Nexus」が掲げた運転免許スキャン1億5,300万件超、IDカード1,000万件超、旅行書類300万件超という規模は攻撃者・販売側の主張で、同社は対象人数を公表していない ※規模未確認", "t": "クラウドプラットフォームへの不正アクセス（2026年4月4日〜9月2日）", "s": "BleepingComputer", "u": "https://www.bleepingcomputer.com/news/security/idscan-confirms-breach-tied-to-153-million-stolen-drivers-licenses/"},
+{"n": "コンデ・ナスト", "e": "Condé Nast", "c": "米国", "d": "2026-09-下旬", "w": "サイバー犯罪フォーラムで利用者3,280万件とされるデータベースが15,000ドルで売りに出された：メールアドレス、氏名、住所、生年月日、性別、電話番号。パスワードやカード情報は含まれないとされる。サンプルは本物のアカウントデータと評価されたが、同社は侵害を確認していない ※未確認", "t": "データ窃取・販売の主張（2025年末のWIRED流出と同一データとされる）", "s": "Allendevaux", "u": "https://www.allendevaux.com/post/top-data-breaches-of-september-2026-biggest-cybersecurity-incidents"},
+{"n": "Helpfeel（Gyazo）", "e": "Helpfeel / Gyazo", "c": "日本", "d": "2026-09-16", "w": "ユーザーデータ約2,362万件（氏名・ニックネーム、メールアドレス、パスワードハッシュ、ユーザー・デバイスID、セッションID、X連携トークン、プロフィール、利用・課金情報など）と、画像メタデータ約4億9,000万件（画像ID、アップロードIP、EXIF位置情報、OCRテキスト、タイトル等）。決済カード情報は含まれず", "t": "画像アップロードサーバの脆弱性を悪用した任意コマンド実行", "s": "SecurityAffairs", "u": "https://securityaffairs.com/199338/data-breach/gyazo-data-breach-exposes-23-million-user-records.html"},
+{"n": "タイムズモビリティ（タイムズカー）", "e": "Times Mobility / Times Car", "c": "日本", "d": "2026-09-28", "w": "退会者・入会未完了者・タイムズビジネス会員を含む約660万アカウント：氏名、住所、生年月日、電話番号、メールアドレス、運転免許情報、復元できない形式のパスワード等。うち約160万アカウントでは運転免許証画像等の本人確認書類の流出も確認（9月29日第3報）。カード情報は対象外", "t": "Webシステムへの不正アクセス（9月25日検知）", "s": "ITmedia エンタープライズ（Infoseekニュース）", "u": "https://news.infoseek.co.jp/article/itmedia_enterprise_20261007020/"},
+{"n": "ヤマト運輸（クロネコ代金後払いサービス）", "e": "Yamato Transport", "c": "日本", "d": "2026-09-29", "w": "顧客情報約526万件（氏名、住所、電話番号、メールアドレス（約49万件分）、商品明細、申込番号等の社内管理情報）、届け先情報約5万件（氏名、住所、電話番号、送り状番号）、加盟店情報約4,100件（加盟店名、加盟店コード）、合計約531万件。件数は10月16日の調査結果公表で確定したもの。クレジットカード情報やパスワードは含まれず", "t": "決済サービスへの不正アクセス（9月28日確認、同日サービス停止）", "s": "INTERNET Watch", "u": "https://internet.watch.impress.co.jp/docs/news/2148860.html"},
+{"n": "米国国防総省 国防人材データセンター（DMDC）", "e": "U.S. Department of Defense / Defense Manpower Data Center", "c": "米国", "d": "2026-09-24", "w": "約305万人（生存者276万人、死者29.4万人）：社会保障番号、氏名、生年月日、連絡先、性別・人種、軍務上の職種等の人事情報が暗号化されずに露出。未承認アクセスは2025年10月〜2026年7月まで継続", "t": "ファイル共有システムの脆弱性", "s": "BetaNews", "u": "https://betanews.com/article/pentagon-data-breach-ssn/"},
+{"n": "Veradigm", "e": "Veradigm", "c": "米国", "d": "2026-09-08", "w": "患者の氏名、住所、電話番号、メールアドレス、一部の患者については社会保障番号。臨床・医療情報は対象外とされる。攻撃グループThe Gentlemenが350万件の患者記録を窃取したと主張し公開を予告したが、同社は件数を確認していない ※件数未確認", "t": "第三者ベンダーの環境で盗まれた認証情報を使ったAPIへのアクセス", "s": "HIPAA Journal", "u": "https://www.hipaajournal.com/veradigm-data-breach-2026/"},
+{"n": "ファインズ（予約システム「いつあき」「TSUNAGU」）", "e": "Fines", "c": "日本", "d": "2026-09-25", "w": "予約者情報1,536,322件：氏名、電話番号、メールアドレス、予約店舗・メニュー・日時など。医療機関の診療予約や店舗予約など、システムを利用する複数施設の予約者が影響", "t": "予約システムのプログラムの不備を悪用した不正アクセス（9月21〜22日発生）", "s": "Security Measures Lab", "u": "https://rocket-boys.co.jp/security-measures-lab/fines-reservation-system-unauthorized-acess-data-leak/"},
+{"n": "アリゾナ州裁判所", "e": "Arizona Courts / Arizona Supreme Court", "c": "米国", "d": "2026-09-30", "w": "約130万人の裁判債務者等の情報（30年分）：氏名、事件番号、社会保障番号。里親ケアに関する機密報告書15万件超も含まれる", "t": "裁判所のデジタル記録システムへのサイバー攻撃（9月24日、約2時間）", "s": "AZCentral (The Arizona Republic)", "u": "https://www.azcentral.com/story/news/arizona/2026/09/30/1-million-impacted-by-arizona-court-data-breach/92029740007/"},
+{"n": "Mathspace", "e": "Mathspace", "c": "オーストラリア", "d": "2026-09-06", "w": "生徒・保護者・学校職員ら1,079,819人（オーストラリア・ニュージーランド）：ユーザー名、氏名、メールアドレス、国、タイムゾーン、利用種別、メール確認状態、最終ログイン日、登録日等。成績情報、パスワード、認証トークンは含まれず", "t": "自己ホスト型の内部レポートツールMetabaseの未修正の脆弱性による侵入", "s": "BleepingComputer", "u": "https://www.bleepingcomputer.com/news/security/mathspace-discloses-data-breach-affecting-over-1-million-people/"},
+{"n": "ミュンヘン大学（LMU）", "e": "Ludwig Maximilian University of Munich", "c": "ドイツ", "d": "2026-09-19", "w": "過去約50年分の入学・在籍データ全体にあたる約60万件：氏名、生年月日、性別、住所、電話番号、メールアドレス、銀行口座（IBAN・名義）、健康保険番号、BAföG（奨学金）番号、履修・在籍情報等。パスワードや試験情報は対象外", "t": "大学の基幹ITシステムへの不正アクセス（9月16日検知）", "s": "LMU Munich（公式発表）", "u": "https://www.lmu.de/en/newsroom/news-overview/news/information-about-a-personal-data-breach-f446c16e.html"},
+{"n": "セイコーマート（セコマ）", "e": "Seicomart / Secoma", "c": "日本", "d": "2026-09-29", "w": "セイコーマートアプリのユーザーID約572,022アカウントが、会員情報を保有するサーバーへの不正アクセスを受けた可能性がある。パスワード情報は漏えいしていないとされる", "t": "アプリ経由の会員情報サーバーへの不正アクセスの可能性（9月28日判明）", "s": "Unitis（2026年9月セキュリティインシデントまとめ）", "u": "https://unitis.jp/articles/24616/"},
+{"n": "スターツ出版（オズモール）", "e": "Starts Publishing / OZmall", "c": "日本", "d": "2026-09-27", "w": "オズモール会員および一部の退会者、最大442,779名分：メールアドレス、一部の方の氏名および住所（都道府県まで）が閲覧された可能性がある（件数は10月1日の第2報による）", "t": "Webサイトへの海外からの大量の不正アクセス（9月26日検知）", "s": "Unitis（2026年9月セキュリティインシデントまとめ）", "u": "https://unitis.jp/articles/24616/"},
+{"n": "LEAN BODY", "e": "LEAN BODY", "c": "日本", "d": "2026-09-15", "w": "退会者を含む約44万件のアカウントの顧客情報が、同社データベースから取得されたことを確認", "t": "データ分析ツールMetabaseの脆弱性を悪用した不正アクセス（8月11日〜、9月に複数回取得）", "s": "Unitis（2026年9月セキュリティインシデントまとめ）", "u": "https://unitis.jp/articles/24616/"},
+{"n": "Weverse（HYBE）", "e": "Weverse Company / HYBE", "c": "韓国", "d": "2026-09-06", "w": "422,584アカウント：内部識別情報（登録時に生成される内部数値ID）と決済・取引関連情報。氏名、連絡先、クレジットカード番号は含まれないとされる", "t": "サービスのセキュリティ脆弱性（韓国インターネット振興院KISA経由の外部報告で発覚）", "s": "Music Ally", "u": "https://musically.com/2026/09/09/hybes-weverse-reveals-data-leak-affecting-422584-user-accounts/"},
+{"n": "デジタル庁（ガバメントソリューションサービス GSS）", "e": "Digital Agency Japan / Government Solution Service", "c": "日本", "d": "2026-09-11", "w": "GSSを利用する府省の職員や業務関係者に関する個人情報約24.6万件が漏えいした可能性がある（氏名約23.6万件、メールアドレス約23.1万件、電話番号約9.4万件、住所約1,000件など）。マイナンバー、金融情報、年金番号は含まれず、一般市民の情報も含まれていない", "t": "ネットワーク接続機器（VPN）の既知の脆弱性の悪用と、保守運用担当者アカウントでのファイルアクセス", "s": "SecurityAffairs", "u": "https://securityaffairs.com/199090/security/non-zero-day-vpn-flaw-left-japan-government-shared-network-platform-exposed-246000-records-at-risk.html"},
+{"n": "Healing Paper（カンナムオンニ／Unni）", "e": "Healing Paper / Gangnam Unni", "c": "韓国", "d": "2026-09-07", "w": "利用者219,665名（うち日本は約4.8万名）：氏名、電話番号、メールアドレス、生年月日、性別、居住国・地域、SNSログインID、IPアドレス、端末情報、相談写真・相談内容、施術情報・施術日、クリニック・医師情報、決済関連情報など", "t": "相談履歴を照会する連携APIへの不正アクセス（9月4日および5日に再アクセス）", "s": "SharkStriker", "u": "https://sharkstriker.com/blog/september-2026-data-breaches/"},
+{"n": "フロリダ州高速道路安全・車両局（FLHSMV）", "e": "Florida Department of Highway Safety and Motor Vehicles / DAVID", "c": "米国", "d": "2026-09-11", "w": "運転者・車両情報データベースDAVIDへの侵入を当局が確認。その後公開されたファイルの大半は車両所有記録（購入者・売却者の氏名、住所、車両識別番号）で、一部に社会保障番号や非米国旅券・移民書類も含まれた。攻撃グループShinyHuntersが主張する20万件超という規模は当局が確認していない ※件数未確認", "t": "プラントシティ警察の職員1名の認証情報（個人端末に不適切に保存されていたもの）の悪用", "s": "Strobes", "u": "https://strobes.co/blog/biggest-data-breaches-september-2026/"},
+{"n": "Trezor（配送委託先ShipMonk経由）", "e": "Trezor / ShipMonk", "c": "チェコ", "d": "2026-09-04", "w": "顧客合計約81,000人（当初公表の約14,000人に加え、9月4日に2019年11月〜2021年8月の注文分である米国顧客約67,000人が追加判明）：氏名、メールアドレス、電話番号、配送先住所、注文番号。削除されたはずの旧データが委託先に残存していた", "t": "物流委託先ShipMonkが利用する分析基盤MetabaseのSQLインジェクション脆弱性", "s": "TechCrunch", "u": "https://techcrunch.com/2026/09/11/scammers-target-hundreds-of-thousands-of-crypto-owners-after-trezor-confirms-data-breach-of-email-provider/"},
+{"n": "三井不動産", "e": "Mitsui Fudosan", "c": "日本", "d": "2026-09-01", "w": "同社およびグループ会社の役職員等の情報最大19,000件、社外関係者の情報最大36,000件について、一部が第三者に閲覧された可能性がある。業務情報（メール、チャット、ファイル等）やパスワードの漏えいは確認されていない", "t": "利用システムへの不正アクセスと資格情報の不正利用", "s": "Unitis（2026年9月セキュリティインシデントまとめ）", "u": "https://unitis.jp/articles/24616/"},
+{"n": "東京メトロ（東京地下鉄）", "e": "Tokyo Metro", "c": "日本", "d": "2026-09-27", "w": "メトポ会員向けサービスにおいて、配信を停止しているメールアドレス約59,000件が閲覧または取得された可能性がある。メールアドレス以外の会員情報は含まれていないことを確認", "t": "メールアドレスを格納したサーバーへの不正アクセス", "s": "Unitis（2026年9月セキュリティインシデントまとめ）", "u": "https://unitis.jp/articles/24616/"},
+{"n": "Simba Telecom", "e": "Simba Telecom", "c": "シンガポール", "d": "2026-09-25", "w": "顧客23,549人：氏名、身分証番号、生年月日、携帯電話番号、メールアドレス。クレジットカードや銀行口座情報は侵害されておらず、データの不正利用の兆候もないとされる", "t": "不正アクセス（9月24日に発覚）", "s": "Allendevaux", "u": "https://www.allendevaux.com/post/top-data-breaches-of-september-2026-biggest-cybersecurity-incidents"},
+{"n": "米連邦捜査局（FBI）", "e": "FBI / FBIJobs.gov", "c": "米国", "d": "2026-09-22", "w": "攻撃グループShinyHuntersが、現職・元FBI職員や応募者に関する2〜3TBのデータを窃取したと主張。メディアに提供された約5,000件のサンプルには氏名、自宅住所、電話番号、バッジ番号、職務、配偶者情報のほか、職員の医療記録・精神科評価も含まれるとされる。FBIはFBIJobs.govへの不正活動を調査中としているが、侵害や窃取は確認していない ※未確認", "t": "Oracle PeopleSoftの脆弱性の悪用（当初ゼロデイと主張。後にWAF回避と既知の脆弱性CVE-2026-35273の未適用が指摘された）", "s": "BleepingComputer", "u": "https://www.bleepingcomputer.com/news/security/shinyhunters-claims-fbi-hack-data-theft-in-peoplesoft-zero-day-breach/"},
+{"n": "DriveWealth", "e": "DriveWealth", "c": "米国", "d": "2026-09-21", "w": "氏名、連絡先、郵便住所、勤務先情報、国籍、年齢、性別、口座番号の一部。提携サービス（Stake、Hatch）の利用者についてはポートフォリオ評価額や現金残高も含まれる。総数は未公表（当局通知ベースではロードアイランド州住民だけで約62,000人）。パスワード、カード情報、銀行口座情報は対象外で、不正な取引や出金は確認されていない", "t": "ソーシャルエンジニアリングによるネットワークへの侵入（9月4〜5日）", "s": "Strobes", "u": "https://strobes.co/blog/biggest-data-breaches-september-2026/"},
+{"n": "Revolut", "e": "Revolut", "c": "英国", "d": "2026-09-12", "w": "「限られた」数の顧客（人数は未公表）：生年月日、住所、メールアドレス、電話番号、パスポートや運転免許証のコピー。本人確認用セルフィー、口座明細、取引履歴も含まれ得るとされる。同社のシステムや顧客資金への影響はないとの説明", "t": "政府機関の正規メールアドレスドメインから送られた詐欺的な情報開示請求に応答し顧客情報を開示", "s": "Reuters", "u": "https://www.reuters.com/legal/litigation/revolut-confirms-sensitive-customer-data-breach-falling-fake-government-requests-2026-09-12/"},
+{"n": "Astrana Health", "e": "Astrana Health", "c": "米国", "d": "2026-09-23", "w": "サーバーに保管された個人・機密情報が不正にアクセスまたは取得されたことを確認（SEC提出のForm 8-K）。具体的にどの情報（患者、従業員、医療提供者、事業・財務情報等）がどの程度影響したかは調査中で未確定、対象人数も未公表", "t": "会社の代表電話番号を偽装した電話によるソーシャルエンジニアリング（ビッシング）", "s": "HIPAA Journal", "u": "https://www.hipaajournal.com/astrana-health-data-breach/"},
+{"n": "AECOM", "e": "AECOM", "c": "米国", "d": "2026-09-下旬", "w": "2つの攻撃グループがそれぞれ約1.22TB、約670GBのデータを窃取したと主張。同社はどちらの主張も確認しておらず、対象となった情報の種類や人数は不明 ※未確認", "t": "データ窃取の主張（恐喝型）", "s": "Allendevaux", "u": "https://www.allendevaux.com/post/top-data-breaches-of-september-2026-biggest-cybersecurity-incidents"},
+{"n": "Rohloff Group（KFCフランチャイズ）", "e": "Rohloff Group", "c": "南アフリカ", "d": "2026-09-下旬", "w": "ランサムウェアグループINC Ransomが536GB・103,000ファイル超を窃取したと主張し、サンプルを公開。大半は従業員情報（銀行明細、身分証明書、懲戒記録）と会社の財務記録とされる。同社は事案の封じ込めを表明し、レストラン営業への支障はないとしている ※規模は攻撃者側の主張", "t": "ランサムウェア攻撃（INC Ransom）", "s": "Allendevaux", "u": "https://www.allendevaux.com/post/top-data-breaches-of-september-2026-biggest-cybersecurity-incidents"},
+{"n": "BigCommerce（Ribonアプリ経由の加盟店）", "e": "BigCommerce / Ribon", "c": "米国", "d": "2026-09-18", "w": "第三者アプリRibonの侵害されたAPI認証情報が使われ、加盟店の店舗に悪性スクリプトが注入されたほか、顧客の氏名、メールアドレス、電話番号、郵便住所がダウンロードされた（英酒類販売Master of Maltが詳報）。アプリは数百店舗に導入されていたが、影響を受けた店舗数・人数は未公表。パスワードや決済情報は対象外", "t": "サプライチェーン攻撃（アプリ提供元Fastrの侵害で認証情報が流出）", "s": "Strobes", "u": "https://strobes.co/blog/biggest-data-breaches-september-2026/"},
+{"n": "スマレジ（スマレジEC・リピート／B2B）", "e": "Smareji", "c": "日本", "d": "2026-09-25", "w": "顧客企業4社の環境で、顧客情報（会社名、氏名、電話番号、住所、メールアドレス、性別、年齢、購入回数・金額など）、受注情報、管理者情報（ログインID、暗号化パスワード等）、WordPress情報（ログインID、暗号化パスワード、プラグインの秘密鍵）が閲覧または取得された可能性がある。対象件数は未公表。クレジットカード情報は保持していないため対象外", "t": "顧客管理画面のログイン機能に存在した脆弱性を悪用した不正アクセス", "s": "Security Measures Lab", "u": "https://rocket-boys.co.jp/security-measures-lab/smaregi-ec-unauthorized-access-login-vulnerability-2026/"}
 ];
 
 const rows = document.getElementById('rows');
